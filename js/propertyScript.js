@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
    // Sample properties data (for demonstration)
 const properties = [
-    { id: 1, name: 'Savannah', image: 'images/rental2.jpg', cost: '$1500 per month', rating: '4.8/5' },
-    { id: 2, name: 'Pooler', image: 'images/rental3.jpg', cost: '$2000 per month', rating: '4.5/5' },
-    { id: 3, name: 'Port Wentworth', image: 'images/rental2.jpg', cost: '$1800 per month', rating: '4.7/5' },
-    { id: 4, name: 'Bloomingdale', image: 'images/rental2.jpg', cost: '$1700 per month', rating: '4.6/5' },
-    { id: 5, name: 'Skidaway Island', image: 'images/rental2.jpg', cost: '$1900 per month', rating: '4.9/5' },
-    { id: 6, name: 'Rincon', image: 'images/rental2.jpg', cost: '$1600 per month', rating: '4.3/5' }
+    { id: 1, name: 'Savannah', image: 'images/rental2.jpg', cost: 15000, rating: 4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' },
+    { id: 2, name: 'Pooler', image: 'images/rental3.jpg', cost: 35000, rating: 4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' },
+    { id: 3, name: 'Port Wentworth', image: 'images/rental2.jpg', cost: 18000 , rating: 4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' },
+    { id: 4, name: 'Bloomingdale', image: 'images/rental2.jpg', cost: 17000 , rating: 5, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' },
+    { id: 5, name: 'Skidaway Island', image: 'images/rental2.jpg', cost: 19000 , rating: 5, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' },
+    { id: 6, name: 'Rincon', image: 'images/rental2.jpg', cost: 1600, rating: 5, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' }
     // Add more properties here
 ];
 

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const editTitleInput = document.getElementById('edit-name');
     const editIngredientsInput = document.getElementById('edit-cost');
     const editInstructionsInput = document.getElementById('edit-rating');
+    
     const saveEditBtn = document.getElementById('save-edit-btn');
     let editedPropertyId = null;
 
@@ -17,18 +18,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Function to create property card
-    function createPropertyCard(property) {
-        const propertyCard = document.createElement('div');
-        propertyCard.classList.add('property');
-        propertyCard.innerHTML = `
-            <h2>${property.title}</h2>
-            <img src="${property.image}" alt="${property.name}">
-            <p><b>Ingredients:</b> ${property.cost.join(', ')}</p>
-            <p><b>Instructions:</b> ${property.rating}</p>
-            <button class="edit-btn" data-id="${property.id}">Edit</button>
-            <button class="delete-btn" data-id="${property.id}">Delete</button>
-        `;
-        return propertyCard;
+    function createPropertyCard(properties) {
+        propertyList.innerHTML = '';
+        properties.forEach(property => {
+            const propertyCard = document.createElement('div');
+            propertyCard.classList.add('property');
+            propertyCard.innerHTML = `
+                <h2>${recipe.title}</h2>
+                <img src="${property.image}" alt="${recipe.title}">
+                <button class="view-details-btn" data-id="${recipe.id}">View Details</button>
+            `;
+            recipeList.appendChild(recipeCard);
+        });
     }
 
     // Event listener for editing property

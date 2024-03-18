@@ -114,6 +114,30 @@ nav.navbar {
     background-color: #7c4dff
 }
 
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    width: 200px;
+}
 
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #666;
+}
 
 

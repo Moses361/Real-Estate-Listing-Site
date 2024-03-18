@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing Properties</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-3TKc2eYDdoV9eUS5PH3NqMSk+bPBoCksD2gtsGFyqJNfcG5OPaymV4RRptHxjxBnw+LhKmQl5gJuC+nE/zWDDA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 70px; /* Adjust this value based on the height of your fixed header */
+            padding-bottom: 60px; /* Add padding to the bottom to make space for the footer */
+            margin: 0; /* Reset default margin */
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            color: rgb(0, 0, 0);
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #40b736;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0; /* Reset default margin */
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            background-color: #40b736;
+            border-radius: 4px;
+            color: white;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+       /* Social media icons */
+.social-icons a {
+    color: #ccc; /* Change to light gray */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .social-icons a {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Listing Properties</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="listedProperties-container">
+        <main id="saved-properties">
+            <!-- Saved properties will be displayed here -->
+        </main>
+
+        <!-- Edit properties Modal -->
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Edit property</h2>
+                <input type="text" id="edit-title" placeholder="Name" /><br />
+                <textarea id="edit-ingredients" placeholder="Cost" rows="5"></textarea><br />
+                <textarea id="edit-instructions" placeholder="Rating" rows="5"></textarea><br />
+                <button id="save-edit-btn" class="save-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-body-tertiary text-center">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Social media icons -->
+                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #3b5998;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #55acee;"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #dd4b39;"><i class="fab fa-google"></i></a>
+                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #ac2bac;"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #0082ca;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #333333;"><i class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Listing Properties. All rights reserved.
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- End of Footer -->
+    <script src="listProperties.js"></script>
+</body>
+</html>

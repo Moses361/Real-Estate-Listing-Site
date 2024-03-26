@@ -1,145 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Listings</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
     <!-- Optional: Your custom CSS file -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
-      /* Header styles */
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        background-color: #333;
-        color: white;
-        height: 4rem;
-      }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Set background color for the entire page */
+        }
 
-      /* .logo {
-            font-size: 2rem;
-        } */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
 
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-      }
+        header {
+    background-color: #4CAF50; /* Set background color for the header */
+    /* color: #fff; */
+    padding: 10px 0;
+    z-index: 999; /* Ensure header appears above other elements */
+}
 
-      #search {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 8px 12px;
-        margin-bottom: 10px; /* Adjust as needed */
-        width: 200px; /* Adjust width as needed */
-      }
 
-      #search:focus {
-        outline: none;
-        border-color: #0dac30; /* Change color when focused */
-      }
+        header h1 {
+            margin: 0;
+            padding: 0;
+        }
 
-      nav ul li {
-        margin-right: 20px; /* Add spacing between navigation items */
-      }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-      nav ul li a {
-        font-size: 1.2rem;
-        padding: 1rem;
-        text-decoration: none;
-        color: white;
-      }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-      nav ul li a:hover {
-        background-color: #0dac30;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      /* Image transition */
-      .property-image img {
-        transition: transform 0.3s ease;
-      }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-      .property-image.clicked img {
-        transform: translate(5px, 5px); /* Adjust the values as needed */
-      }
+        nav ul li a:hover {
+            color: #ffe; /* Change text color on hover */
+            background-color: #333; /* Change background color on hover */
+            border-radius: 5px; /* Add border-radius for rounded corners */
+            padding: 5px 10px; /* Add padding for better visual appearance */
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #f8f9fa; /* Secondary color for the background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .featured-properties {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px; /* Add margin to separate from header */
+        }
+
+        .fa-home {
+            margin-left: 5px;
+        }
     </style>
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
     <header>
-      <div class="logo">Listed Properties</div>
-      <nav id="nav-menu">
-        <ul class="nav">
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li>
-            <a href="listedProperties.html" class="active">Listed Properties</a>
-          </li>
-          <li><a href="contactUs.html">Contact Us</a></li>
-        </ul>
-      </nav>
-      <input type="text" id="search" placeholder="Search for properties..." />
+        <div class="container">
+            <h1>Five start Properties</h1>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="listedProperties.html">Listed Properties</a></li>
+                    <li><a href="contactUs.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="container mt-4">
-      <h2>Featured Properties</h2>
-      <div class="row">
-        <!-- Property Image Column -->
-        <div class="col-lg-6 mb-4">
-          <div class="property-image">
-            <img src="/images/rental2.jpg" class="img-fluid" alt="Property 1" />
-          </div>
-        </div>
-        <!-- Property Details Column -->
-        <div class="col-lg-6 mb-4">
-          <div class="property-details">
-            <!-- Details omitted for brevity -->
-            <h2>Property Details</h2>
-            <p><strong>Title:</strong> Property Title</p>
-            <p>
-              <strong>Description:</strong> Developer of Residential Communities
-              in Kenya <br />
-              Welcome to Unity Homes, where we believe in building communities
-              that enhance lives and secure futures. <br />As a leading property
-              developer in Kenya, we specialise in mass-producing
-              investment-grade affordable housing with a focus on the community.
-              Currently, we are building family-friendly communities in Tatu
-              City consisting of almost 3,000 modern homes with 1, 2, 3, and 4
-              bedrooms on 34 acres at the heart of Tatu City.
-            </p>
-            <p><strong>Price:</strong> $1,000,000</p>
-            <a href="#" class="btn btn-primary">View Details</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add more property cards here -->
-      <h2>Featured Properties</h2>
-      <div id="propertyList" class="row"></div>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form action="/search" method="GET">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
     </div>
-    <!-- Property Image Section -->
-    <div class="container mt-4">
-      <h2>Property Image</h2>
-      <div class="row">
+
+    <div class="container">
+        <div class="featured-properties">
+            <h2>Featured Properties <i class="fas fa-home"></i></h2>
+            <div id="propertyList" class="row">
+                <!-- Property Card -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="/images/rental2.jpg" class="card-img-top" alt="Property Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Property Title</h5>
+                            <p class="card-text">Developer of Residential Communities in Kenya</p>
+                            <p class="card-text">$1,000,000</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat this block for each property -->
+            </div>
+        </div>
+    </div>
+
+  
+    <div id="propertyList" class="row"></div>
+</div>
+<!-- Property Image Section -->
+<div class="container mt-4">
+    <div class="row">
         <!-- Property Image Column -->
         <div class="col-lg-6 mb-4">
-          <div class="property-image">
-            <img
-              src="/images/rental2.jpg"
-              class="img-fluid"
-              alt="Property Image"
-            />
-          </div>
+            <div class="property-image">
+                <img src="/images/rental2.jpg" class="img-fluid" alt="Property Image" />
+            </div>
         </div>
         <!-- Property Reviews Section -->
         <div class="col-lg-6 mb-4">
@@ -233,112 +232,40 @@
       </div>
     </div>
 
-    <h1>Real Estate Properties</h1>
-    <h3>Feedback Form using</h3>
-    <div class="form-box">
-      <div class="textup">
-        <i class="fa fa-solid fa-clock"></i>
-        It only takes two minutes!!
+    
+
+    <footer class="footer" style="display: flex; justify-content: space-between; align-items: center; background-color: orange;">
+      <div class="footer-logo" style="display: block; padding: 0 10px;">
+          <img src="/images/rental5.png" alt="Logo" style="max-width: 150px;">
+          <h3>Company Name</h3>
       </div>
-      <form>
-        <label for="uname">
-          <i class="fa fa-solid fa-user"></i>
-          Name
-        </label>
-        <input type="text" id="uname" name="uname" required />
+      <div class="footer-links" style="display: block; padding: 0 10px;">
+          <ul style="list-style: none; padding: 0; margin: 0;">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact Us</a></li>
+          </ul>
+      </div>
+      <div class="footer-social" style="display: block; padding: 0 10px;">
+          <h3>Follow Us</h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+              <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+      </div>
+      <div class="copyright" style="padding: 0 10px; color: white;">
+          <p>&copy; 2024 @moses</p>
+      </div>
+  </footer>
+  
+  
+  
+  
+  
 
-        <label for="email">
-          <i class="fa fa-solid fa-envelope"></i>
-          Email Address
-        </label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="phone">
-          <i class="fa-solid fa-phone"></i>
-          Phone No
-        </label>
-        <input type="tel" id="phone" name="phone" required />
-
-        <label>
-          <i class="fa-solid fa-face-smile"></i>
-          Do you satisfy with our service?
-        </label>
-        <div class="radio-group">
-          <input type="radio" id="yes" name="satisfy" value="yes" checked />
-          <label for="yes">Yes</label>
-
-          <input type="radio" id="no" name="satisfy" value="no" />
-          <label for="no">No</label>
-        </div>
-
-        <label for="msg">
-          <i class="fa-solid fa-comments" style="margin-right: 3px"></i>
-          Write your Suggestions:
-        </label>
-        <textarea id="msg" name="msg" rows="4" cols="10" required> </textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <!-- Remove the container if you want to extend the Footer to full width. -->
-    <div class="container my-5">
-      <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-          <!-- Section: Social media -->
-          <section class="mb-4">
-            <!-- Social media icons -->
-            <a
-              href="#"
-              class="btn text-white btn-floating m-1"
-              style="background-color: #3b5998"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a
-              href="#"
-              class="btn text-white btn-floating m-1"
-              style="background-color: #55acee"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a
-              href="#"
-              class="btn text-white btn-floating m-1"
-              style="background-color: #dd4b39"
-              ><i class="fab fa-google"></i
-            ></a>
-            <a
-              href="#"
-              class="btn text-white btn-floating m-1"
-              style="background-color: #ac2bac"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="#"
-              class="btn text-white btn-floating m-1"
-              style="background-color: #0082ca"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              href="#"
-              class="btn text-white btn-floating m-1"
-              style="background-color: #333333"
-              ><i class="fab fa-github"></i
-            ></a>
-          </section>
-          <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div
-          class="text-center p-3"
-          style="background-color: rgba(0, 0, 0, 0.05)"
-        >
-          © 2024 Listing Properties. All rights reserved.
-        </div>
-        <!-- Copyright -->
-      </footer>
-      <!-- End of Footer -->
-    </div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const propertyImages = document.querySelectorAll(".property-image");
@@ -350,6 +277,7 @@
         });
       });
     </script>
+    <script src="viewdetails.js"></script>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -357,23 +285,3 @@
   </body>
 </html>
 
-<!-- style for
-<style>
-    /* Footer styles */
-    footer {
-        background-color: #333333;
-        color: #fff;
-        padding: 20px 0;
-        text-align: center;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-
-   /* Social media icons */
-.social-icons a {
-color: #ccc; /* Change to light gray */
-text-decoration: none;
-margin: 0 10px;
-}
-</style> -->

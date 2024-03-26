@@ -1,375 +1,174 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0">
-	<style>
-        * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Set background color for the entire page */
+        }
 
-/* Global Styles */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
 
-body {
-	font-family: Arial, sans-serif;
-}
+        header {
+            background-color: #4CAF50; /* Set background color for the header */
+            color: #fff;
+            padding: 10px 0;
+        }
 
-/* Header */
+        header h1 {
+            margin: 0;
+            padding: 0;
+        }
 
-header {
-	background-color: white;
-	color: rgb(0, 0, 0);
-	padding: 10px 0;
-	position: fixed;
-	width: 100%;
-	z-index: 100;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-}
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 5px auto;
-	padding: 0 20px;
-}
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-.logo {
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: #40b736;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-.nav-links {
-	list-style: none;
-	display: flex;
-}
+        nav ul li a:hover {
+            color: #ffe; /* Change text color on hover */
+            background-color: #333; /* Change background color on hover */
+            border-radius: 5px; /* Add border-radius for rounded corners */
+            padding: 5px 10px; /* Add padding for better visual appearance */
+        }
 
-.nav-links li {
-	margin-right: 20px;
-}
+        /* About section styles */
+        .about {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+        }
 
-.nav-links a {
-	color: rgb(0, 0, 0);
-	padding: 10px;
-	font-weight: bold;
-	text-decoration: none;
-}
+        .about h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
 
-.nav-links a:hover {
-	background-color: #40b736;
-	border-radius: 4px;
-	color: white;
-}
+        .about p {
+            font-weight: bold;
+            color: #555;
+        }
 
-/* About Section */
+        .about-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
 
-.about {
-	background: rgb(224, 251, 222);
-	background: linear-gradient(360deg, rgb(245, 255, 245) 0%, rgb(173, 252, 163) 100%);
-	padding: 100px 0 20px 0;
-	text-align: center;
-}
+        .about-img img {
+            width: 300px;
+            border-radius: 8px;
+        }
 
-.about h1 {
-	font-size: 2.5rem;
-	margin-bottom: 20px;
-}
+        .about-info div {
+            width: 60%;
+        }
 
-.about p {
-	font-size: 1rem;
-	color: #323030;
-	max-width: 800px;
-	margin: 0 auto;
-}
+        .about-info button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
 
-.about-info {
-	margin: 2rem 2rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: left;
-}
-
-.about-img {
-	width: 20rem;
-	height: 20rem;
-
-}
-
-.about-img img {
-	width: 100%;
-	height: 100%;
-	border-radius: 5px;
-	object-fit: contain;
-}
-
-.about-info p {
-	font-size: 1.3rem;
-	margin: 0 2rem;
-	text-align: justify;
-}
-
-button {
-	border: none;
-	outline: 0;
-	padding: 10px;
-	margin: 2rem;
-	font-size: 1rem;
-	color: white;
-	background-color: #40b736;
-	text-align: center;
-	cursor: pointer;
-	width: 15rem;
-	border-radius: 4px;
-}
-
-button:hover {
-	background-color: #1f9405;
-}
-
-/* Team Section */
-
-.team {
-	padding: 30px 0;
-	text-align: center;
-}
-
-.team h1 {
-	font-size: 2.5rem;
-	margin-bottom: 20px;
-}
-
-.team-cards {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 15px;
-	margin-top: 20px;
-}
-
-.card {
-	background-color: white;
-	border-radius: 6px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-	overflow: hidden;
-	transition: transform 0.2s, box-shadow 0.2s;
-	width: 18rem;
-	height: 25rem;
-	margin-top: 10px;
-}
-
-.card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
-}
-
-.card-img {
-	width: 18rem;
-	height: 12rem;
-}
-
-.card-img img {
-	width: 100%;
-	height: 100%;
-	object-fit: fill;
-}
-
-.card-info button {
-	margin: 2rem 1rem;
-}
-
-.card-name {
-	font-size: 2rem;
-	margin: 10px 0;
-}
-
-.card-role {
-	font-size: 1rem;
-	color: #888;
-	margin: 5px 0;
-}
-
-.card-email {
-	font-size: 1rem;
-	color: #555;
-}
-
-/* Footer */
-footer {
-	background-color: #222;
-	color: white;
-	text-align: center;
-	padding: 20px 0;
-}
-
-@media (max-width: 768px) {
-	nav {
-		display: block;
-	}
-
-	.logo {
-		text-align: center;
-	}
-
-	.nav-links {
-		margin-top: 1rem;
-		justify-content: space-between;
-	}
-
-	.nav-links li {
-		margin-right: 0;
-	}
-
-	.about h1 {
-		font-size: 2rem;
-	}
-
-	.about p {
-		font-size: 0.9rem;
-	}
-
-	.about-info {
-		flex-direction: column;
-		text-align: center;
-	}
-
-	.about-img {
-		width: 60%;
-		height: 60%;
-		margin-bottom: 1rem;
-	}
-
-	.about-info p {
-		margin: 1rem 2rem;
-	}
-
-	.about-info button {
-		margin: 1rem 2rem;
-		width: 10rem;
-	}
-
-	.team {
-		margin: 0 1rem;
-	}
-}
-
+        .about-info button:hover {
+            background-color: #45a049;
+        }
     </style>
-	<title>About Us</title>
 </head>
-
 <body>
-	<header>
-		<nav>
-			<div class="logo">
-			Listing Properties
-			</div>
-			<ul class="nav-links">
-				<li><a href="index.html">Home</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li><a href="contactUs.html">Contact Us</a></li>
+    <header>
+        <div class="container">
+            <h1>My Beautiful Website</h1>
+            <nav>
+				<ul class="nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="aboutUs.html">About Us</a></li>
+					<li><a href="listedProperties.html" class="active">Listed Properties</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+				</ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About section -->
+    <section class="about">
+        <h1>About Us</h1>
+        <p>
+            Listing properties is a leading platform...
+        </p>
+        <div class="about-info">
+            <div class="about-img">
+                <img src="/images/rental.jpg" alt="Geeksforgeeks">
+            </div>
+            <div>
+                <p>
+                    Listing properties was founded in 2015 with the vision of building sustainable residential communities across Africa. We are currently building, family-friendly communities in Tatu City of almost 3,000 units which constitute 1, 2, 3 and 4 bedroom modern homes on 34 acres at the heart of Tatu City, Kenya.
+                </p>
+                <p>
+                    We are passionate about delivering excellent, high quality houses to our clients and we accomplish through highly motivated, ardent teams.
+                </p>
+                <button>Read More...</button>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer" style="display: flex; justify-content: space-between; align-items: center; background-color: orange;">
+		<div class="footer-logo" style="display: block; padding: 0 10px;">
+			<img src="/images/rental5.png" alt="Logo" style="max-width: 150px;">
+			<h3>Company Name</h3>
+		</div>
+		<div class="footer-links" style="display: block; padding: 0 10px;">
+			<ul style="list-style: none; padding: 0; margin: 0;">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact Us</a></li>
 			</ul>
-		</nav>
-	</header>
-
-	<section class="about">
-		<h1>About Us</h1>
-		<p style="font-weight: bold">
-		Listing properties is a leading platform...
-		</p>
-		<div class="about-info">
-			<div class="about-img">
-				<img src="/images/rental.jpg" alt="Geeksforgeeks">
-			</div>
-			<div>
-			<p> Listing properties was founded in 2015 with the vision of building sustainable residential communities across Africa. We are currently building, family-friendly communities in Tatu City of almost 3,000 units which constitute 1, 2, 3 and 4 bedroom modern homes on 34 acres at the heart of Tatu City, Kenya.
-
-                We are passionate about delivering excellent, high quality houses to our clients and we accomplish through highly motivated, ardent teams.
-			</p>
-				<button>Read More...</button>
-			</div>
 		</div>
-	</section>
-
-	<section class="team">
-		<h1>Meet Our Team</h1>
-		<div class="team-cards">
-		
-			<!-- Cards here -->
-			<!-- Card 1 -->
-		
-			<div class="card">
-				<div class="card-img">
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20230824122630/
-business-office-business-woman-professional.jpg" alt="User 1">
-				</div>
-				<div class="card-info">
-					<h2 class="card-name">Jane</h2>
-					<p class="card-role">CEO and Founder</p>
-					<p class="card-email">jane@example.com</p>
-					<p><button class="button">Contact</button></p>
-				</div>
-			</div>
-
-			<!-- Card 2 -->
-		
-			<div class="card">
-				<div class="card-img">
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20230822183347/
-man-portrait-businessman-male.jpg" alt="User 2">
-				</div>
-				<div class="card-info">
-					<h2 class="card-name">Miller</h2>
-					<p class="card-role">Co-Founder</p>
-					<p class="card-email">Miller@example.com</p>
-					<p><button class="button">Contact</button></p>
-				</div>
-			</div>
-		
-			<!-- Card 3 -->
-		
-			<div class="card">
-				<div class="card-img">
-					<img src="/images/rental.jpg" alt="User 3">
-				</div>
-				<div class="card-info">
-					<h2 class="card-name">Joe</h2>
-					<p class="card-role">Co-Founder</p>
-					<p class="card-email">Joe@example.com</p>
-					<p><button class="button">Contact</button></p>
-				</div>
-			</div>
+		<div class="footer-social" style="display: block; padding: 0 10px;">
+			<h3>Follow Us</h3>
+			<ul style="list-style: none; padding: 0; margin: 0;">
+				<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+				<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+			</ul>
 		</div>
-	</section>
-
-    <footer class="bg-body-tertiary text-center">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Social media icons -->
-                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #3b5998;"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #55acee;"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #dd4b39;"><i class="fab fa-google"></i></a>
-                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #ac2bac;"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #0082ca;"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="btn text-white btn-floating m-1" style="background-color: #333333;"><i class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2024 Listing Properties. All rights reserved.
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- End of Footer -->
-    
+		<div class="copyright" style="padding: 0 10px; color: white;">
+			<p>&copy; 2024 @moses</p>
+		</div>
+	</footer>
+</body>
+</html>

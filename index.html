@@ -1,149 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Real Estate Listings</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <!-- Optional: Your custom CSS file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* Set background color for the entire page */
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0; /* Set background color for the entire page */
+      }
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
 
-        header {
-    background-color: #4CAF50; /* Set background color for the header */
-    /* color: #fff; */
-    padding: 10px 0;
-    z-index: 999; /* Ensure header appears above other elements */
-}
+      /* Header styles */
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px 0;
+      }
 
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        header h1 {
-            margin: 0;
-            padding: 0;
-        }
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
+      nav ul li {
+        margin-right: 20px;
+      }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+      }
 
-        nav ul li a:hover {
-            color: #ffe; /* Change text color on hover */
-            background-color: #333; /* Change background color on hover */
-            border-radius: 5px; /* Add border-radius for rounded corners */
-            padding: 5px 10px; /* Add padding for better visual appearance */
-        }
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
 
-        .content {
-            padding: 20px;
-            text-align: center;
-        }
+      .featured-properties {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px; /* Add margin to separate from header */
+      }
 
-        .container {
-            background-color: #f8f9fa; /* Secondary color for the background */
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .featured-properties {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px; /* Add margin to separate from header */
-        }
-
-        .fa-home {
-            margin-left: 5px;
-        }
+      .fa-home {
+        margin-left: 5px;
+      }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <h1>Five start Properties</h1>
-            <nav>
-                <ul class="nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutUs.html">About Us</a></li>
-                    <li><a href="listedProperties.html">Listed Properties</a></li>
-                    <li><a href="contactUs.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <h1>Five start Properties</h1>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="listedProperties.html">Listed Properties</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <!-- Search Bar -->
     <div class="search-container">
-        <form action="/search" method="GET">
-            <input type="text" placeholder="Search..." name="search">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
+      <input type="text" id="search" placeholder="Search..." />
+      <button onclick="searchProperties()">Search</button>
     </div>
 
     <div class="container">
-        <div class="featured-properties">
-            <h2>Featured Properties <i class="fas fa-home"></i></h2>
-            <div id="propertyList" class="row">
-                <!-- Property Card -->
-                <div class="col-lg-4 mb-4">
-                    <div class="card">
-                        <img src="/images/rental2.jpg" class="card-img-top" alt="Property Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Property Title</h5>
-                            <p class="card-text">Developer of Residential Communities in Kenya</p>
-                            <p class="card-text">$1,000,000</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat this block for each property -->
+      <div class="featured-properties">
+        <h2>Featured Properties <i class="fas fa-home"></i></h2>
+        <div id="propertyList" class="row">
+          <!-- Property Card -->
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <img
+                src="/images/rental2.jpg"
+                class="card-img-top"
+                alt="Property Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Property Title</h5>
+                <p class="card-text">
+                  Developer of Residential Communities in Kenya
+                </p>
+                <p class="card-text">$1,000,000</p>
+                <a href="./property_details.html" class="btn btn-primary"
+                  >View Details</a
+                >
+              </div>
             </div>
+          </div>
+          <!-- Repeat this block for each property -->
         </div>
+      </div>
     </div>
 
-  
-    <div id="propertyList" class="row"></div>
-</div>
-<!-- Property Image Section -->
-<div class="container mt-4">
-    <div class="row">
+    <!-- Property Image Section -->
+    <div class="container mt-4">
+      <div class="row">
         <!-- Property Image Column -->
         <div class="col-lg-6 mb-4">
-            <div class="property-image">
-                <img src="/images/rental2.jpg" class="img-fluid" alt="Property Image" />
-            </div>
+          <div class="property-image">
+            <img
+              src="/images/rental2.jpg"
+              class="img-fluid"
+              alt="Property Image"
+            />
+          </div>
         </div>
         <!-- Property Reviews Section -->
         <div class="col-lg-6 mb-4">
           <h2>Property Reviews</h2>
-          <!-- Review 1 -->
           <header>How was your experience?</header>
           <div class="review">
             <div class="rating">
@@ -232,39 +238,54 @@
       </div>
     </div>
 
-    
-
-    <footer class="footer" style="display: flex; justify-content: space-between; align-items: center; background-color: orange;">
-      <div class="footer-logo" style="display: block; padding: 0 10px;">
-          <img src="/images/rental5.png" alt="Logo" style="max-width: 150px;">
-          <h3>Company Name</h3>
+    <footer
+      class="footer"
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: orange;
+      "
+    >
+      <div class="footer-logo" style="display: block; padding: 0 10px">
+        <img src="/images/rental5.png" alt="Logo" style="max-width: 150px" />
+        <h3>Five star properties</h3>
       </div>
-      <div class="footer-links" style="display: block; padding: 0 10px;">
-          <ul style="list-style: none; padding: 0; margin: 0;">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Contact Us</a></li>
-          </ul>
+      <div class="footer-links" style="display: block; padding: 0 10px">
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
       </div>
-      <div class="footer-social" style="display: block; padding: 0 10px;">
-          <h3>Follow Us</h3>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-              <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-          </ul>
+      <div class="footer-social" style="display: block; padding: 0 10px">
+        <h3>Follow Us</h3>
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </li>
+        </ul>
       </div>
-      <div class="copyright" style="padding: 0 10px; color: white;">
-          <p>&copy; 2024 @moses</p>
+      <div class="copyright" style="padding: 0 10px; color: white">
+        <p>&copy; 2024 All rights reserved</p>
       </div>
-  </footer>
-  
-  
-  
-  
-  
+    </footer>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -284,4 +305,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
-

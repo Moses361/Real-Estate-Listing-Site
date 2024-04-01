@@ -1,174 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
     <style>
-        /* Global styles */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* Set background color for the entire page */
-        }
+      /* Global styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0; /* Set background color for the entire page */
+      }
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
 
-        header {
-            background-color: #4CAF50; /* Set background color for the header */
-            color: #fff;
-            padding: 10px 0;
-        }
+      /* Header styles */
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px 0;
+      }
 
-        header h1 {
-            margin: 0;
-            padding: 0;
-        }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
+      nav ul li {
+        margin-right: 20px;
+      }
 
-        nav ul li a:hover {
-            color: #ffe; /* Change text color on hover */
-            background-color: #333; /* Change background color on hover */
-            border-radius: 5px; /* Add border-radius for rounded corners */
-            padding: 5px 10px; /* Add padding for better visual appearance */
-        }
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+      }
 
-        /* About section styles */
-        .about {
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 50%;
-        }
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
 
-        .about h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
+      /* About section styles */
+      .about {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 50%;
+      }
 
-        .about p {
-            font-weight: bold;
-            color: #555;
-        }
+      .about h1 {
+        margin-bottom: 20px;
+        color: #333;
+      }
 
-        .about-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
+      .about p {
+        font-weight: bold;
+        color: #555;
+      }
 
-        .about-img img {
-            width: 300px;
-            border-radius: 8px;
-        }
+      .about-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
 
-        .about-info div {
-            width: 60%;
-        }
+      .about-img img {
+        width: 300px;
+        border-radius: 8px;
+      }
 
-        .about-info button {
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+      .about-info div {
+        width: 60%;
+      }
 
-        .about-info button:hover {
-            background-color: #45a049;
-        }
+      .about-info button {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      .about-info button:hover {
+        background-color: #45a049;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <h1>My Beautiful Website</h1>
-            <nav>
-				<ul class="nav">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="aboutUs.html">About Us</a></li>
-					<li><a href="listedProperties.html" class="active">Listed Properties</a></li>
-					<li><a href="contactUs.html">Contact Us</a></li>
-				</ul>
-            </nav>
-        </div>
+      <div class="container">
+        <h1>Five start Properties</h1>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li>
+              <a href="listedProperties.html" class="active"
+                >Listed Properties</a
+              >
+            </li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- About section -->
     <section class="about">
-        <h1>About Us</h1>
-        <p>
-            Listing properties is a leading platform...
-        </p>
-        <div class="about-info">
-            <div class="about-img">
-                <img src="/images/rental.jpg" alt="Geeksforgeeks">
-            </div>
-            <div>
-                <p>
-                    Listing properties was founded in 2015 with the vision of building sustainable residential communities across Africa. We are currently building, family-friendly communities in Tatu City of almost 3,000 units which constitute 1, 2, 3 and 4 bedroom modern homes on 34 acres at the heart of Tatu City, Kenya.
-                </p>
-                <p>
-                    We are passionate about delivering excellent, high quality houses to our clients and we accomplish through highly motivated, ardent teams.
-                </p>
-                <button>Read More...</button>
-            </div>
+      <h1>About Us</h1>
+      <p>Listing properties is a leading platform...</p>
+      <div class="about-info">
+        <div class="about-img">
+          <img src="/images/rental.jpg" alt="Geeksforgeeks" />
         </div>
+        <div>
+          <p>
+            Listing properties was founded in 2015 with the vision of building
+            sustainable residential communities across Africa. We are currently
+            building, family-friendly communities in Tatu City of almost 3,000
+            units which constitute 1, 2, 3 and 4 bedroom modern homes on 34
+            acres at the heart of Tatu City, Kenya.
+          </p>
+          <p>
+            We are passionate about delivering excellent, high quality houses to
+            our clients and we accomplish through highly motivated, ardent
+            teams.
+          </p>
+          <button>Read More...</button>
+        </div>
+      </div>
     </section>
 
-
-    <footer class="footer" style="display: flex; justify-content: space-between; align-items: center; background-color: orange;">
-		<div class="footer-logo" style="display: block; padding: 0 10px;">
-			<img src="/images/rental5.png" alt="Logo" style="max-width: 150px;">
-			<h3>Company Name</h3>
-		</div>
-		<div class="footer-links" style="display: block; padding: 0 10px;">
-			<ul style="list-style: none; padding: 0; margin: 0;">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Contact Us</a></li>
-			</ul>
-		</div>
-		<div class="footer-social" style="display: block; padding: 0 10px;">
-			<h3>Follow Us</h3>
-			<ul style="list-style: none; padding: 0; margin: 0;">
-				<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-				<li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-				<li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-				<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-			</ul>
-		</div>
-		<div class="copyright" style="padding: 0 10px; color: white;">
-			<p>&copy; 2024 @moses</p>
-		</div>
-	</footer>
-</body>
+    <footer
+      class="footer"
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: orange;
+      "
+    >
+      <div class="footer-logo" style="display: block; padding: 0 10px">
+        <img src="/images/rental5.png" alt="Logo" style="max-width: 150px" />
+        <h3>Five star properties</h3>
+      </div>
+      <div class="footer-links" style="display: block; padding: 0 10px">
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-social" style="display: block; padding: 0 10px">
+        <h3>Follow Us</h3>
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="copyright" style="padding: 0 10px; color: white">
+        <p>&copy; 2024 @moses</p>
+      </div>
+    </footer>
+  </body>
 </html>

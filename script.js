@@ -15,11 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Display properties on page load
     displayProperties(properties);
 
-    // Search functionality
+    // Event listener for input in the search field
     searchInput.addEventListener('input', function() {
-        const searchTerm = searchInput.value.trim().toLowerCase();
-        const filteredProperties = properties.filter(property => property.name.toLowerCase().includes(searchTerm) || property.description.toLowerCase().includes(searchTerm));
-        displayProperties(filteredProperties);
+        searchProperties(this.value.trim().toLowerCase());
     });
 
     // Function to display properties
@@ -42,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                             </div>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="/property_details.html" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -51,6 +49,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         // Set inner HTML
         propertyList.innerHTML = cards;
+    }
+
+    // Function to filter properties based on search term
+    function searchProperties(searchTerm) {
+        const filteredProperties = properties.filter(property => 
+            property.name.toLowerCase().includes(searchTerm) || 
+            property.description.toLowerCase().includes(searchTerm)
+        );
+        displayProperties(filteredProperties);
     }
 
     // Event listener for "View Details" buttons
